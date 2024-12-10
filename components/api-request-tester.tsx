@@ -183,18 +183,13 @@ export function ApiRequestTester() {
         headers: headerObject,
         body: ['GET', 'HEAD'].includes(method) ? null : body,
       })
-  
-      const response = await fetch('/api/proxy', {
-        method: 'POST',
+
+      const response = await fetch(url, {
+        method: method,
         headers: {
-          'Content-Type': 'application/json',
+          ...headerObject,
         },
-        body: JSON.stringify({
-          url,
-          method,
-          headers: headerObject,
-          body: ['GET', 'HEAD'].includes(method) ? null : body,
-        }),
+        body: ['GET', 'HEAD'].includes(method) ? null : body,
       })
   
       const responseData = await response.json()
