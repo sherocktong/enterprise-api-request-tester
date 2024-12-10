@@ -58,7 +58,7 @@ The Enterprise API Request Tester is a powerful, user-friendly tool designed for
 1. Clone the repository:
 
 ```bash
-   git clone https://github.com/your-username/enterprise-api-request-tester.git
+   git clone https://github.com/sherocktong/enterprise-api-request-tester.git
 ```
 
 2. Navigate to the project directory:
@@ -102,25 +102,24 @@ yarn dev
 9. **Load Sample** 🧪: Use the "Load Sample" button to quickly test with pre-configured, functional API requests.
 
 ---
-I modified this project for personal use. Now it supports to convert postman request HTTP code snippets into the requests, so that you can use postman to edit requests and convert them to the requests to run on next.js.
+## Generate import files from Postman requests
+1. Converting postman request HTTP code snippets into the requests, so that you can use postman to edit requests and convert them to the requests to run on next.js.
 
-Create two folders named "source" and "target" under project root directory at first if you want to use the conversion feature.
+2. Create a folder with a name of site ID under source folder. The site ID is creator ID.
 
-Create a folder with a name of site ID under source folder. The site ID is creator ID.
+3. Create a file with a meaningful request name under directory `${project}/source/${site-id}/`. The file name is also the request name, so I recommend to create the names with no extension names. For example, for the above code snippet, I suggest to set the file name as "group-list".
 
-Create a file with a meaningful request name under directory `${project}/source/${site-id}/`. The file name is also the request name, so I recommend to create the names with no extension names. For example, for the above code snippet, I suggest to set the file name as "group-list".
-
-Follow the [guide](https://learning.postman.com/docs/sending-requests/create-requests/generate-code-snippets/) to get HTTP code snippets. You may get a code snippet like this:
+4. Follow the [guide](https://learning.postman.com/docs/sending-requests/create-requests/generate-code-snippets/) to get HTTP code snippets. You may get a code snippet like this:
 ```
 GET /serve-lab/group/groups?size=20&sortBy=createdAt&sortDirection=asc&groupName=&start=1 HTTP/1.1
 Host: test-site-id-ms.testdomain.com
 ```
 
-Past the snippet into the file just created. **DO NOT modify** anything manually to the snippet.
+5. Past the snippet into the file just created. **DO NOT modify** anything manually to the snippet.
 
-Navigate to project root directory and run `python3 convert.py`. There is a json file named as site ID created under target directory. It is not particular for Python's version. The Python I use is 3.11.
+6. Navigate to project root directory and run `python3 convert.py`. There is a json file named as site ID created under target directory. It is not particular for Python's version. The Python I use is 3.11.
 
-Now follow the [installation](#installation) guide to start up this tool, and import the json file from UI.
+7. Now follow the [installation](#installation) guide to start up this tool, and import the json file from UI.
 
 ---
 ## Contributing 🤝
